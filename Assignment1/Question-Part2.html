@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="jquery-3.0.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit1").click(function(){
+                if($("#firstName").val()==""){
+                    $("#spanFirst").show();
+                }else{
+                    $("#spanFirst").hide();
+                }
+
+                if($("#lastName").val()==""){
+                    $("#spanLast").show();
+                }else{
+                    $("#spanLast").hide();
+                }
+
+                if($("input[type=radio]:checked").length == 0){
+                    $("#spanGender").show();
+                }else{
+                    $("#spanGender").hide();
+                }
+
+                if ($("input[type=checkbox]:checked").length == 0){
+                    $("#spanEmployment").show();
+                }else{
+                    $("#spanEmployment").hide();
+                }
+
+                if ($("#carType").val() == "selectcard"){
+                    $("#spanCar").show();
+                }else{
+                    $("#spanCar").hide();
+                }
+
+            })
+
+        })
+    </script>
+    <meta charset="utf-8" />
+    <style>
+        .spanNoti{
+            display: none;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Please enter the following mandatory information</p>
+    <form name="identification">
+        <p>First Name:<input type="text" id="firstName" /><span id="spanFirst" class="spanNoti" >First Name is Mandatory Field</span></p>
+        <p>Last Name:<input type="text" id="lastName" /><span id="spanLast" class="spanNoti" >Last Name is Mandatory Field</span></p>
+
+        <p>Gender Type:<span id="spanGender" class="spanNoti" >Gender select is Mandatory ratio button</span></p>
+        
+        <input type="radio" id="gender1" name="gender" value="male">Male<br />
+        <input type="radio" id="gender2" name="gender" value="female" />Female<br />
+        <input type="radio" id="gender3" name="gender" value="other" />Other<br />
+
+        <p>Employment situation:<span id="spanEmployment" class="spanNoti" >Employment is mandatory checkbox button</span></p>
+        <input type="checkbox" id="employment1" name="employment" value="employ" />Employ<br />
+        <input type="checkbox" id="employment2" name="employment" value="unemploy" />Not Employ<br />
+
+
+
+        <p>Current car brand: <span id="spanCar" class="spanNoti" >Please select a car type</span></p>
+
+        <select id="carType">
+            <option value="selectcard">not selected</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="honda">honda</option>
+            <option value="toyota">toyota</option>
+        </select>
+        
+        <p>
+            <input type="button" value="submit" id="submit1" />
+        </p>
+    </form>
+</body>
+</html>
+

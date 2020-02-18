@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="jquery-3.0.0.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#submit1").click(function(){
+                if($("#firstName").val()==""){
+                    alert("First Name is Mandatory Field");
+                }
+                if($("#lastName").val()==""){
+                    alert("Last Name is Mandatory Field");
+                }
+
+                if ($("input[type=radio]:checked").length == 0){
+                    alert("Gender select is Mandatory ratio button");
+                }
+
+                if ($("input[type=checkbox]:checked").length == 0){
+                    alert("Employment is mandatory checkbox button");
+                }
+
+                if ($("#carType").val() == "selectcard"){
+                    alert("Please select a car type");
+                }
+
+            })
+        });
+        
+    </script>
+
+</head>
+<body>
+    <p>Please enter the following mandatory information</p>
+    <form name="identification">
+        <p>First Name:<input type="text" id="firstName" /></p>
+        <p>Last Name:<input type="text" id="lastName" /></p>
+
+         <p>Gender Type:</p>
+        <input type="radio" id="gender1" name="gender" value="male">Male<br />
+        <input type="radio" id="gender2" name="gender" value="female" />Female<br />
+        <input type="radio" id="gender3" name="gender" value="other" />Other<br />
+
+       <p>
+            Employment situation<br />
+            <input type="checkbox" id="employment1" name="employment" value="employ" />Employ<br />
+            <input type="checkbox" id="employment2" name="employment" value="unemploy" />Not Employ<br />
+
+        </p>
+
+
+
+        <p>Current car brand:</p>
+
+        <select id="carType">
+            <option value="selectcard">not selected</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="honda">honda</option>
+            <option value="toyota">toyota</option>
+        </select>
+
+        <p>
+            <input type="button" value="submit" id="submit1"/>
+        </p>
+    </form>
+</body>
+</html>
+
