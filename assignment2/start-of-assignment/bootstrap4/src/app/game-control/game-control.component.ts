@@ -10,6 +10,7 @@ export class GameControlComponent implements OnInit {
 
   interval;
   currentNumber:number = 0;
+  began:boolean = false;
 
   @Output() startEvent = new EventEmitter();
 
@@ -19,7 +20,7 @@ export class GameControlComponent implements OnInit {
   }
 
   onStartGame() {
-    
+    this.began = true
     this.interval = setInterval(() => {
         this.currentNumber = this.currentNumber + 1;
         console.log(this.currentNumber);
@@ -28,6 +29,7 @@ export class GameControlComponent implements OnInit {
   }
 
   onPauseGame(){
+    this.began = false;
     clearInterval(this.interval);
   }
 
