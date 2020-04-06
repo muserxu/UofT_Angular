@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm"> 
+
+      
+        <div class="row">
+          <div class="col-lg-6">
+              <label>Mail Address</label>
+              <input type="email" id="mailAddress" name="mailAddress" class="form-control" [(ngModel)]="user.mailAddress" required [email]="user.email !==''" #mailAddress="ngModel">
+              <span class="help-block" *ngIf="(submitted && mailAddress.errors?.required) || (mailAddress.errors?.required && mailAddress.touched)">Email address is required</span>
+              <span class="help-block" *ngIf="(submitted && mailAddress.errors?.email) || (mailAddress.errors?.email && mailAddress.touched)">Email address is invalid</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <label>Subscription</label>
+            <select id="subscription" name="subscription" class="form-control" [(ngModel)]="user.subscription" required #subscription="ngModel">
+              <option value=""></option>
+              <option value="Basic">Basic</option>
+              <option value="Advanced">Advanced</option>
+              <option value="Pro">Pro</option>
+            </select>
+            <span class="help-block" *ngIf="(submitted && !subscription.valid ) || (subscription.touched && !subscription.valid)">Subscription required</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+              <label>Password</label>
+              <input type="password" id="password" name="password" class="form-control" [(ngModel)]="user.password" required #password="ngModel">
+              <span class="help-block" *ngIf="(submitted && !password.valid) ||(!password.valid && password.touched)">Password is required</span>
+
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-lg-6">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <span class="help-block">{{msg}}</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
