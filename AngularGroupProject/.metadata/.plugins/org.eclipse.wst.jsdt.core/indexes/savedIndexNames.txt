@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\muser\Desktop\Angular\AngularGroupProject\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+19470514.index
+2938930194.index
+234143157.index
+2237145437.index
+3544249213.index
+1979683521.index
